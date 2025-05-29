@@ -12,7 +12,6 @@ line_bot_api = LineBotApi(os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 
 router = APIRouter(
-    prefix="/webhooks",
     tags=["chatbot"],
     responses={404: {"description": "Not found"}},
 )
@@ -23,7 +22,7 @@ class Line(BaseModel):
     events: List[Optional[None]]
 
 
-@router.post("/line")
+@router.post("/webhook")
 async def callback(request: Request, x_line_signature: str = Header(None)):
     body = await request.body()
     try:
