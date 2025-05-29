@@ -51,7 +51,6 @@ def ask_dify(user_message: str) -> str:
         "Content-Type": "application/json"
     }
     data = {
-        "inputs": {},
         "query": user_message
     }
 
