@@ -50,8 +50,15 @@ def ask_dify(user_message: str) -> str:
         "Authorization": f"Bearer {DIFY_API_KEY}",
         "Content-Type": "application/json"
     }
+
     data = {
-        "query": user_message
+        "query": user_message,
+        "inputs": {
+            "sys.query": user_message,
+            "1742898316566.text": "一般的には〜という見方が多いようです。",
+            "17482722005320.text": "OK",
+            "context": ""
+        }
     }
 
     try:
