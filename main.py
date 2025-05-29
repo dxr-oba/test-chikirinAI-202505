@@ -17,7 +17,7 @@ app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
-app.include_router(webhooks.router, prefix="/webhook")
+app.include_router(webhooks.router)
 
 
 @app.get("/")
