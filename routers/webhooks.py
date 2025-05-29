@@ -52,14 +52,12 @@ def ask_dify(user_message: str) -> str:
     }
 
     data = {
-        "query": user_message,
-        "inputs": {
-            "sys.query": user_message,
-            "1742898316566.text": "一般的には〜という見方が多いようです。",
-            "17482722005320.text": "OK",
-            "context": ""
-        }
-    }
+    "inputs": {
+        "text": "",
+        "sys.query": user_message
+    },
+    "query": user_message
+　}
 
     try:
         response = requests.post(f"{DIFY_BASE_URL}/chat-messages", headers=headers, json=data)
