@@ -57,7 +57,7 @@ def ask_dify(user_message: str) -> str:
         "sys.query": user_message
     },
     "query": user_message
-　}
+    }
 
     try:
         response = requests.post(f"{DIFY_BASE_URL}/chat-messages", headers=headers, json=data)
